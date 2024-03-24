@@ -282,7 +282,7 @@ animation-name: blinker;
   display:flex;
   flex-flow: row wrap;
   width:auto;
-  margin: 410px 0px;
+  margin: 500px 0px;
 }
 
 .container{
@@ -338,17 +338,6 @@ animation-name: blinker;
     animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
   }
   72%, 100% {transform:translate3d(calc(-100% - 40px), 0, 0)}
-}
-
-.ticker-top {
-  background: #870407;
-  font-size: 12pt;
-  font-weight: bold;
-  width: 100%;
-  height: 40px;
-  overflow: hidden;
-  position: relative;
-  white-space: nowrap;
 }
 
 .stream
