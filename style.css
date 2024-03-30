@@ -7,7 +7,6 @@ body {
   color: #fff;
   display: flex;
   display: -webkit-flex;
-  flex-direction: column;
   height: 100vh;
   overflow:hidden;
   margin: 0;
