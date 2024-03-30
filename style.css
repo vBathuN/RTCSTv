@@ -5,6 +5,7 @@ body {
   background: #19f radial-gradient(transparent, #02c);
   font-family: Arial;
   color: #fff;
+  position: absolute;
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
