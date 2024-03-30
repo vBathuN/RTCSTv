@@ -8,9 +8,6 @@ body {
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
-  
-  align-items: flex-end;
-  
   height: 100vh;
   overflow:hidden;
   margin: 0;
