@@ -10,7 +10,7 @@ body {
   flex-direction: column;
   -webkit-flex-direction: column;
   align-items: flex-end;
-  -webkit-align-items: flex-end;
+  
   justify-content: flex-end;
   
   height: 100vh;
