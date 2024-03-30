@@ -1,6 +1,6 @@
 /* HUD based on http://cloudfront.mediamatters.org/static/uploader/image/2016/04/22/ChrisWallaceMacCallum.jpg */
 /* Depends on length of ticker text */
-html { max-width: 1280px;  main-hight: 720px; margin: 0 auto; vertical-align:middle;}
+html { max-width: 1280px;  main-hight: 720px; margin: 0 auto;}
 body {
   background: #19f radial-gradient(transparent, #02c);
   font-family: Arial;
@@ -17,6 +17,7 @@ body {
   overflow:hidden;
   margin: 0;
   text-transform: uppercase;
+  vertical-align: middle;
 }
 
 p {
