@@ -44,7 +44,7 @@ p {
 .box-top, .box-bttm {
   display: block;
   margin-left: auto;
-  margin-right: 0px;
+  margin-right: 20px;
   margin-top: 0px;
   perspective: 1200px;
   perspective-origin: 50% 100px;
