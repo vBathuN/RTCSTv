@@ -3,12 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>RTCS News TV Display</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./images/twolayout.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./style.css">
 </head>
 <body>
 <div class='rtcs'>
 <iframe class="rtcs" width="100vh" height="100vh" src="https://s.rtcs.live/newsreport" allow="autoplay" frameborder="0" autoplay; encrypted-media;></iframe>
-<div class='ticker-top'></div></div>
+<div class='ticker-top'>
+<div class="banner">
+  <h1 class="muted-text">BREAKING NEWS</h1>
+  <h1 class="visible-text"></h1>
+</div>
+</div></div>
 
 <div class='stream'>
 <iframe class="stream" width="400px" height="720px" src="https://s.rtcs.live/anchor" allow="autoplay" frameborder="0" autoplay; encrypted-media;></iframe>
@@ -270,37 +275,52 @@ if (!title && !subTitle) {
   document.getElementById('subTitleContainer').style.display = 'block';
 }
 </script>
+
 <script>
-  /* JavaScript for the clock only */
+const text = "BREAKING NEWS";
 
-function updateTime() {
-  var dateInfo = new Date();
+const textEl = document.querySelector(".visible-text");
 
-  // get computer time
-  var hr,
-    _min = (dateInfo.getMinutes() < 10) ? "0" + dateInfo.getMinutes() : dateInfo.getMinutes(),
-    ampm = (dateInfo.getHours() > 12) ? "PM" : "AM";
+function animate() {
+  const characterEls = textEl.querySelectorAll("span");
+  const tl = anime.timeline({
+    easing: "easeOutExpo",
+    duration: 400,
+    loop: true,
+  });
+  tl.add({
+    targets: ".banner",
+    scaleX: [0, 1],
+    duration: 800,
+    easing: "easeOutCubic"
+  })
+    .add({
+      targets: ".muted-text",
+      opacity: [0, 1]
+    })
+    .add({
+      targets: characterEls,
+      delay: anime.stagger(120),
+      translateY: [30, 0],
+      translateX: [-10, 0],
+      opacity: [0, 1],
+      easing: "spring"
+    });
+}
 
-  if (dateInfo.getHours() == 0) {
-    hr = 12;
-  } else if (dateInfo.getHours() > 12) {
-    hr = dateInfo.getHours() - 12;
-  } else {
-    hr = dateInfo.getHours();
-  }
+function init() {
+  const docEl = new DocumentFragment();
+  text.split("").forEach((character) => {
+    const span = document.createElement("span");
+    span.innerText = character;
+    docEl.appendChild(span);
+  });
+  textEl.appendChild(docEl);
+}
 
-  var currentTime = hr + ":" + _min;
-
-  // print time
-  document.querySelector(".hm").innerHTML = currentTime;
-  document.querySelector(".ampm").innerHTML = ampm;
-};
-
-// print time and date once, then update them every second
-updateTime();
-setInterval(function() {
-  updateTime()
-}, 1000);
+init();
+animate();
 </script>
+
 </body>
 </html>
