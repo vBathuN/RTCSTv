@@ -246,7 +246,7 @@ animation-name: blinker;
   width: 1280px;
   height: 200px;
   line-height: 1.6;
-  margin: -10px -200px;
+  margin: -28px -200px;
   
 }
 
@@ -373,6 +373,55 @@ animation-name: blinker;
   /*100% {
     background-position: left; it's the default value, no need to define it
   }*/
+}
+
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
+
+:root {
+  font-size: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 6rem;
+  letter-spacing: 0.2rem;
+  margin: 0;
+}
+
+@media only screen and (max-width: 1000px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+.muted-text {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.visible-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.visible-text>span {
+  opacity: 0;
+  display: inline-block;
+}
+
+.banner {
+  background-color: #870407;
+  color: #ffffff;
+  padding: 1rem 0;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  transform-origin: left top;
 }
 
 .rtcs
